@@ -90,7 +90,7 @@ def random_lat_lng(start_x, start_y)
     city = cities.sample
     lat_lng = random_lat_lng(city[:lat], city[:lng])
 
-location=Location.create!(
+ location=Location.create!(
     name: city[:name],
     address_line_one: @addressLineOne.sample,
     address_line_two: city[:name],
@@ -102,4 +102,20 @@ location=Location.create!(
 
 )
 end
+
+20.times do 
+    spe=["Anesthesiology", "Family medicine", "Dermatology", "Pediatrics", "Preventive medicine" ]
+    edu=["MBBS,MD", "BSc,MD,Phd", "MDC,MBBS"]
+ Doctor.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    education: edu.sample,
+    speciality: spe.sample,
+    role: "doctor"
+
+ )
+end
+
+
 puts "✅ Done seeding!"

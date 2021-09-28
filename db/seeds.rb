@@ -12,3 +12,8 @@ DoctorLocation.destroy_all
 Appointment.destroy_all
 Comment.destroy_all
 
+100.times do
+    patient=Patient.create!(
+        username: Faker::Internet.username,
+    )
+end

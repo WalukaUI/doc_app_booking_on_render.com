@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :comments
   resources :appointments
-  resources :doctor_locations
+  resources :doctor_locations, only: [:show, :index]
   resources :doctors
   resources :locations
   resources :patients

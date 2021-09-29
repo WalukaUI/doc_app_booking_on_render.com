@@ -15,24 +15,24 @@ DoctorLocation.destroy_all
 Appointment.destroy_all
 Comment.destroy_all
 
+# doctor table data
 
-repeat     = 10
-@addressLineOne=1.upto(repeat).map { |count| Faker::Address.community }
+spe=["Anesthesiology", "Family medicine", "Dermatology", "Pediatrics", "Preventive medicine" ]
+edu=["MBBS,MD", "BSc,MD,Phd", "MDC,MBBS"]
 
-# Patient table data
 
-10.times do
-    patient=Patient.create!(
-        first_name: Faker::Name.first_name,
-        last_name: Faker::Name.last_name,
-        email: Faker::Internet.email,
-        contact_number: Faker::PhoneNumber.cell_phone,
-        clinic_location: @addressLineOne.sample,
-        role: "patient",
-        username: Faker::Internet.username,
-        password_digest: Faker::Address.country
-    )
-end
+doctor1=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+doctor2=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+doctor3=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+doctor4=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+doctor5=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+doctor6=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+doctor7=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+doctor8=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+doctor9=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+doctor10=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor")
+
+puts "doctor seeded"
 
 # Location  table data
 
@@ -86,36 +86,80 @@ def random_lat_lng(start_x, start_y)
     [x + start_x, y + start_y]
   end
 
-10.times do
-    city = cities.sample
-    lat_lng = random_lat_lng(city[:lat], city[:lng])
+  repeat     = 10
+  @addressLineOne=1.upto(repeat).map { |count| Faker::Address.community }
 
- location=Location.create!(
-    name: city[:name],
-    address_line_one: @addressLineOne.sample,
-    address_line_two: city[:name],
-    city: city[:name],
-    zipcode: Faker::Address.zip_code,
-    contact_number: Faker::Address.zip_code,
-    latitude: lat_lng[0],
-    longitude: lat_lng[1]
+  city = cities.sample
+  lat_lng = random_lat_lng(city[:lat], city[:lng])
 
-)
-end
+location1=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location2=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location3=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location4=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location5=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location6=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location7=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location8=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location9=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location10=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location11=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
 
-20.times do 
-    spe=["Anesthesiology", "Family medicine", "Dermatology", "Pediatrics", "Preventive medicine" ]
-    edu=["MBBS,MD", "BSc,MD,Phd", "MDC,MBBS"]
- Doctor.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    education: edu.sample,
-    speciality: spe.sample,
-    role: "doctor"
+puts "location seeded"
 
- )
-end
+# Patient table data
 
+patient1=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient2=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient3=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient4=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient5=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient5=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient6=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient7=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient8=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient9=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient10=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: @addressLineOne.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+
+puts "ptients seeded"
+
+ # DoctorLocation Table data
+ 
+ patient=[patient1,patient4,patient2,patient3,patient5,patient6,patient7,patient8,patient9,patient10]
+ doctor=[doctor1,doctor2,doctor3,doctor4,doctor5,doctor6,doctor7,doctor8,doctor9,doctor10]
+ location=[location1,location2,location3,location4,location5,location6,location7,location8,location9,location10,location11]
+
+
+  15.times do DoctorLocation.create!(
+   doctor: doctor.sample,
+   location: location.sample
+  ) 
+  end
+  puts "DoctorLocation seeded"
+
+# Comments Table data
+
+10.times do 
+  Comment.create!(
+    doctor: doctor.sample,
+    patient: patient.sample,
+    comment:Faker::Quote.jack_handey,
+    points: rand(1..5)
+    )
+  end
+
+  puts "comment seeded"
+
+# Appointments Table data
+
+10.times do 
+   
+  Appointment.create!(
+   doctor: doctor.sample,
+   patient: patient.sample,
+   date: Faker::Date.backward(days: 14),
+   time: Faker::Time.between(from: DateTime.now - 10, to: DateTime.now, format: :short),
+   status: "open"
+  )
+ end
 
 puts "✅ Done seeding!"

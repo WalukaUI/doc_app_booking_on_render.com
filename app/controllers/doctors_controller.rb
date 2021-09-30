@@ -16,6 +16,22 @@ class DoctorsController < ApplicationController
           render json: doctor.to_json(except: [:created_at, :updated_at], include: [comment: { except: [:created_at, :updated_at]}]), status: 200
     end
 
+    def create
+        doctor = Doctor.create!(doctor_params)
+        render json: doctor.to_json(except: [:created_at, :updated_at]), status: :created
+    end
+
+    def update
+        doctor = Doctor.find(params[:id])
+        doctor.update!(doctor_params)
+        render json: doctor.to_json(except: [:created_at, :updated_at])
+    end
+
+    def destroy
+        doctor = Doctor.destroy(params[:id])
+        render json: {message: "doctor deleted"}
+    end
+
     def location_index
         doctor = Location.find(params[:location_id])
         location=doctor.locations

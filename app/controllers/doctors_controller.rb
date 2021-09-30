@@ -47,7 +47,6 @@ class DoctorsController < ApplicationController
         params.permit(:first_name, :last_name, :email, :education, :speciality, :role)
     end
 
-    
     def render_not_found
         render json: { error: "Doctor not found" }, status: :not_found
     end

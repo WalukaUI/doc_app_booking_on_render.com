@@ -1,4 +1,6 @@
 class DoctorsController < ApplicationController
+    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
     def index
         if params[:location_id]
           location = Location.find(params[:location_id])
@@ -23,6 +25,15 @@ class DoctorsController < ApplicationController
     private
     
     def doctor_params
-        params.permit(:name, :section, :role, :department_id, :city_id)
+        params.permit(:first_name, :last_name, :email, :education, :speciality, :role)
+    end
+
+    
+    def render_not_found
+        render json: { error: "Doctor not found" }, status: :not_found
+    end
+
+    def render_unprocessable_entity(invalid)
+      render json: { errors: invalid.record.errors }, status: :unprocessable_entity
     end
 end

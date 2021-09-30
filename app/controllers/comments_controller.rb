@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
       private
 
       def comment_params
-        params.permit(:name, :address_line_one, :address_line_two, :city, :zipcode, :contact_number, :latitude, :longitude)
+        params.permit(:doctor_id, :patient_id, :comment, :points)
       end
 
       def render_not_found

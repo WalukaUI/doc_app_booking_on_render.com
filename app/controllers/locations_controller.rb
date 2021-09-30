@@ -1,15 +1,15 @@
 class LocationsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
-    
+
     def index
         if params[:doctor_id]
           doctor = Doctor.find(params[:doctor_id])
-          location = doctor.location
+          location = doctor.locations
         else
-          project = Location.all
+          location = Location.all
         end
-        render json: project
+        render json: location.to_json(except: [:created_at, :updated_at])
       end
 
       def show
@@ -22,9 +22,21 @@ class LocationsController < ApplicationController
         render json: location.to_json(except: [:created_at, :updated_at]), status: 201
       end
 
+      def update
+        location = Location.find(params[:id])
+        location.update!(location_params)
+        render json: location.to_json(except: [:created_at, :updated_at])
+      end
+
       def destroy
         location = Location.destroy(params[:id])
         render json: {message: "Location deleted"}
+      end
+
+      def doctor_index
+        location = Location.find(params[:location_id])
+        doctor= location.doctors
+        render json: doctor
       end
 
       private

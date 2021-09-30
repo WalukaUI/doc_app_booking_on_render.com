@@ -31,7 +31,7 @@ class AppointmentsController < ApplicationController
       private
 
       def appointment_params
-        params.permit(:doctor_id, :patient_id, :comment, :points)
+        params.permit(:doctor_id, :patient_id, :date, :time, :status)
       end
 
       def render_not_found

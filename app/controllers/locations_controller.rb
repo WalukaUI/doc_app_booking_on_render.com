@@ -8,4 +8,9 @@ class LocationsController < ApplicationController
         end
         render json: project
       end
+
+      def show
+        location = Location.find(params[:id])
+        render json: location.to_json(except: [:created_at, :updated_at]), status: 200
+      end
 end

@@ -5,6 +5,9 @@ class DoctorsController < ApplicationController
         if params[:location_id]
           location = Location.find(params[:location_id])
           doctor = location.doctors
+        elsif params[:patient_id]
+          patient = Patient.find(params[:patient_id])
+          doctor = patient.doctors
         else
           doctor = Doctor.all
         end

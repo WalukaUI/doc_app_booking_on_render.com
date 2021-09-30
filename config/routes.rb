@@ -13,12 +13,18 @@ Rails.application.routes.draw do
   post "/doctorlogin", to: "sessions#createdoctor"
   delete "/logout", to: "sessions#destroy"
 
+
   resources :locations do
     resources :doctors, only: [:show, :index]
   end
 
   resources :doctors do
     resources :locations, only: [:show, :index]
+    resources :patients, only: [:show, :index]
+  end
+
+  resources :patients do
+    resources :doctors, only: [:show, :index]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

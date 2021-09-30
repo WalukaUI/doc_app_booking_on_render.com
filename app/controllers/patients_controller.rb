@@ -4,8 +4,13 @@ class PatientsController < ApplicationController
     # before_action :authorize, only: [:show]
 
     def index
-     patient=Patient.all
-     render json: patient.to_json(except: [:created_at, :updated_at, :username, :password_digest])
+      if params[:doctor_id]
+        doctor = Doctor.find(params[:doctor_id])
+        patient = doctor.patients
+      else
+        patient=Patient.all
+      end
+      render json: patient.to_json(except: [:created_at, :updated_at, :username, :password_digest])
     end
     
     def create

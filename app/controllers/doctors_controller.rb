@@ -11,13 +11,7 @@ class DoctorsController < ApplicationController
         else
           doctor = Doctor.all
         end
-        render json: doctor
-    end
-
-    def grtapp
-      doctor = Doctor.find(params[:id])
-      docapp = doctor.appointments
-      render json: docapp
+          render json: doctor
     end
   
     def show

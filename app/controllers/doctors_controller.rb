@@ -13,10 +13,16 @@ class DoctorsController < ApplicationController
         end
         render json: doctor
     end
+
+    def grtapp
+      doctor = Doctor.find(params[:id])
+      docapp = doctor.appointments
+      render json: docapp
+    end
   
     def show
           doctor = Doctor.find(params[:id])
-          render json: doctor.to_json(except: [:created_at, :updated_at], include: [comment: { except: [:created_at, :updated_at]}]), status: 200
+          render json: doctor.to_json(except: [:created_at, :updated_at], include: [appointments: { except: [:created_at, :updated_at]}], include: [comment: { except: [:created_at, :updated_at]}]), status: 200
     end
 
     def create

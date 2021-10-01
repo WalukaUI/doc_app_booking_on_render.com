@@ -3,7 +3,12 @@ class AppointmentsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def index
-        appointment = Appointment.all
+        if params[:doctor_id]
+          doctor = Doctor.find(params[:doctor_id])
+          appointment = doctor.appointments
+        else
+          appointment = Appointment.all
+        end
         render json: appointment.to_json(except: [:created_at, :updated_at])
       end
 

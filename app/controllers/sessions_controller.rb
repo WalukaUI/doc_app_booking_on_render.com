@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @patient.id
             render json: @patient, status: :created
           else
-            render json: { error: "Invalid name or password" }, status: :unauthorized
+            render json: { error: "Invalid email or password" }, status: :unauthorized
           end
         elsif params[:doctor]
           @doctor = Doctor.find_by(email: params[:email])
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @doctor.id
             render json: @doctor, status: :created
           else
-            render json: { error: "Invalid name or password" }, status: :unauthorized
+            render json: { error: "Invalid email or password" }, status: :unauthorized
           end
         end
     end

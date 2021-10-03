@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+  #skip_before_action :authorize, only: [:show, :index]
   before_action :authorize, only: [:show, :index]
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
@@ -11,7 +12,7 @@ class PatientsController < ApplicationController
       else
         patient=Patient.all
       end
-        render json: patient.to_json(except: [:created_at, :updated_at, :username, :password_digest])
+        render json: patient.to_json(except: [:created_at, :updated_at, :username])
     end
     
     def create
@@ -36,8 +37,8 @@ class PatientsController < ApplicationController
     end
 
     def show
-      patient = Patient.find_by(id: session[:user_id])
-      # patient = Patient.find_by(id: params[:id])
+
+      patient = Patient.find_by(id: params[:id])
       render json: patient.to_json(except: [:created_at, :updated_at, :username, :password_digest], include: [comment: {except: [:created_at, :updated_at]}]) 
     end
   
@@ -47,7 +48,7 @@ class PatientsController < ApplicationController
     end
 
     def patient_params
-      params.permit(:first_name, :last_name, :username, :email, :contact_number, :clinic_location, :role, :password_digest, :password_confirmation)
+      params.permit(:first_name, :last_name, :username, :email, :contact_number, :clinic_location, :role, :password, :password_confirmation)
     end
 
     def render_not_found

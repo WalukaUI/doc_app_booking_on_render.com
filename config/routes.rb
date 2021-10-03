@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   resources :patients 
 
   #, only: [:show, :index]
-  post "/signuppatient", to: "patient#create"
-  post "/signupdoctor", to: "doctor#create"
-  get "/me", to: "patient#show"
+  post "/signuppatient", to: "patients#create"
+  post "/signupdoctor", to: "doctors#create"
+  get "/me", to: "patients#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 

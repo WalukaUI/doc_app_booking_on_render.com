@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(version: 2021_10_03_072314) do
     t.string "education"
     t.string "speciality"
     t.string "role"
-    t.string "username"
-    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.string "password_digest"
   end
 
   create_table "locations", force: :cascade do |t|

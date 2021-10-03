@@ -14,7 +14,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
-require_relative "../lib/middleware/secure_cookies"
+#require_relative "../lib/middleware/secure_cookies"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -40,10 +40,10 @@ module DoctorBookingManager
     # Adding back cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-    config.middleware.insert_after ActionDispatch::Static, Middleware::SecureCookies
+    #config.middleware.insert_after ActionDispatch::Static, Middleware::SecureCookies
 
-    if Rails.env.production? 
-      config.action_dispatch.cookies_same_site_protection = :none
-     end
+    # if Rails.env.production? 
+    #   config.action_dispatch.cookies_same_site_protection = :none
+    #  end
   end
 end

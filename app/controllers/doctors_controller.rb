@@ -1,4 +1,5 @@
 class DoctorsController < ApplicationController
+    before_action :authorize, only: [:show, :index]
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
     def index
@@ -44,7 +45,7 @@ class DoctorsController < ApplicationController
     private
     
     def doctor_params
-        params.permit(:first_name, :last_name, :email, :education, :speciality, :role)
+        params.permit(:first_name, :last_name, :email, :education, :speciality, :role, :password_digest, :password_confirmation)
     end
 
     def render_not_found

@@ -1,7 +1,8 @@
 class PatientsController < ApplicationController
+  before_action :authorize, only: [:show, :index]
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
-    # before_action :authorize, only: [:show]
+   
 
     def index
       if params[:doctor_id]
@@ -16,7 +17,7 @@ class PatientsController < ApplicationController
     def create
      patient = Patient.create(patient_params)
        if patient.valid?
-    #   session[:patient_id] = patient.id
+         session[:user_id] = patient.id
          render json: patient, status: :created
        else
          render json: { error: patient.errors.full_messages }, status: :unprocessable_entity
@@ -35,15 +36,15 @@ class PatientsController < ApplicationController
     end
 
     def show
-    #   patient = Patient.find_by(id: session[:patient_id])
-      patient = Patient.find_by(id: params[:id])
+      patient = Patient.find_by(id: session[:user_id])
+      # patient = Patient.find_by(id: params[:id])
       render json: patient.to_json(except: [:created_at, :updated_at, :username, :password_digest], include: [comment: {except: [:created_at, :updated_at]}]) 
     end
   
     private
-    # def authorize
-    #   return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :patient_id
-    # end
+    def authorize
+      return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
+    end
 
     def patient_params
       params.permit(:first_name, :last_name, :username, :email, :contact_number, :clinic_location, :role, :password_digest, :password_confirmation)

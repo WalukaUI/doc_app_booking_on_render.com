@@ -41,5 +41,9 @@ module DoctorBookingManager
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
     config.middleware.insert_after ActionDispatch::Static, Middleware::SecureCookies
+
+    if Rails.env.production? 
+      config.action_dispatch.cookies_same_site_protection = :none
+     end
   end
 end

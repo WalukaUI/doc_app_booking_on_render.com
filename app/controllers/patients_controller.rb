@@ -1,5 +1,4 @@
 class PatientsController < ApplicationController
-  #skip_before_action :authorize, only: [:show, :index]
   before_action :authorize, only: [:show, :index]
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity

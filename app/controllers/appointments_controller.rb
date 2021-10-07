@@ -21,8 +21,8 @@ class AppointmentsController < ApplicationController
       end
 
       def create
-        appointment = Appointment.create(appointment_params)
-        render json: appointment.to_json(except: [:created_at, :updated_at]), status: 201
+        appointment = Appointment.create!(appointment_params)
+        render json: appointment.to_json(except: [:created_at, :updated_at]), status: :created
       end
 
       def update

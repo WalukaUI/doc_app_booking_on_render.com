@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-    skip_before_action :authorize, only: [:show, :index]
+    skip_before_action :authorize, only: [:show, :index, :create]
     # before_action :authorize, only: [:show, :index]
     
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found

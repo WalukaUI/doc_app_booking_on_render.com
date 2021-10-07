@@ -3,7 +3,6 @@ class PatientsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
    
-
     def index
       if params[:doctor_id]
         doctor = Doctor.find(params[:doctor_id])

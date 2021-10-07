@@ -8,7 +8,7 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     # origins Rails.env.production? ? 'https://doctor-appointment-creator.netlify.app' : 'http://localhost:3001'
-    origins '*'
+     origins Rails.env.production? ? 'https://localhost:3001' : 'http://localhost:3001'
 
     resource '*',
       headers: :any,

@@ -2,9 +2,9 @@ class Patient < ApplicationRecord
 
     has_secure_password
     
-    has_many :appointments
+    has_many :appointments, dependent: :destroy 
     has_many :doctors, through: :appointments
-    has_many :comment
+    has_many :comment, dependent: :destroy
 
     validates :username, presence: true, uniqueness: true
     validates :username, length: { in: 3..20 }

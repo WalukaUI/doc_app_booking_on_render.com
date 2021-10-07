@@ -4,9 +4,7 @@ class Location < ApplicationRecord
 
     validates :name, uniqueness: true
     validates :name, presence: true 
-    validates :longitude, uniqueness: true
     validates :longitude, presence: true 
-    validates :latitude, uniqueness: true
     validates :latitude, presence: true  
     
 end

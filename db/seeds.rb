@@ -92,17 +92,17 @@ def random_lat_lng(start_x, start_y)
   city = cities.sample
   lat_lng = random_lat_lng(city[:lat], city[:lng])
 
-location1=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location2=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location3=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location4=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location5=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location6=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location7=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location8=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location9=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location10=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location11=Location.create!(name: city[:name],address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location1=Location.create!(name: "Normandy",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location2=Location.create!(name: "OFallon",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location3=Location.create!(name: "Cool Vally",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location4=Location.create!(name: "Club Hills",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location5=Location.create!(name: "Edwardville",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location6=Location.create!(name: "Edmundson",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location7=Location.create!(name: "Kinloach",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location8=Location.create!(name: "Brentwood",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location9=Location.create!(name: "Hazelwood",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location10=Location.create!(name: "St.Peters",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location11=Location.create!(name: "Creve Cour",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
 
 puts "location seeded"
 

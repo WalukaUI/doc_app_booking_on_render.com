@@ -92,17 +92,17 @@ def random_lat_lng(start_x, start_y)
   city = cities.sample
   lat_lng = random_lat_lng(city[:lat], city[:lng])
 
-location1=Location.create!(name: "Normandy",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location2=Location.create!(name: "OFallon",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location3=Location.create!(name: "Cool Vally",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location4=Location.create!(name: "Club Hills",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location5=Location.create!(name: "Edwardville",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location6=Location.create!(name: "Edmundson",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location7=Location.create!(name: "Kinloach",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location8=Location.create!(name: "Brentwood",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location9=Location.create!(name: "Hazelwood",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location10=Location.create!(name: "St.Peters",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
-location11=Location.create!(name: "Creve Cour",address_line_one: @addressLineOne.sample,address_line_two: city[:name],city: city[:name],zipcode: Faker::Address.zip_code,contact_number: Faker::Address.zip_code,latitude: lat_lng[0],longitude: lat_lng[1])
+location1=Location.create!(name: "Normandy",address_line_one: "7738 Springdale Dr",address_line_two: "Normandy",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 354544742,latitude: 38.713894216893614, longitude: -90.30208583616161)
+location2=Location.create!(name: "OFallon",address_line_one: "2254 State Hwy K",address_line_two: "O'Fallon",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 5378568456,latitude: 38.67118615958442,longitude: -90.21846271745149)
+location3=Location.create!(name: "Cool Vally",address_line_one: "1790 S Florissant Rd",address_line_two: "Cool Vally",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 52687565,latitude: 38.72439590747494 ,longitude: -90.30697151854389)
+location4=Location.create!(name: "Club Hills",address_line_one: "17306 Kedzie Ave ",address_line_two: "Hazel Crest",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 7882251,latitude: 41.57448061735295,longitude: -87.69542802188134)
+location5=Location.create!(name: "Edwardville",address_line_one: "2525 S State Rte 157 ",address_line_two: "Edwardsville",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 3648855,latitude: 38.78110712349212,longitude: -89.99641567999147)
+location6=Location.create!(name: "Edmundson",address_line_one: "10482 Natural Bridge Rd",address_line_two: "Edmunson",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 87155696,latitude: 38.73712379963696,longitude: -90.36228141271617)
+location7=Location.create!(name: "Kinloach",address_line_one: "7102 N Hanley Rd",address_line_two: ", Hazelwood",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 8745325,latitude: 38.769072424972215,longitude: -90.33469273996937)
+location8=Location.create!(name: "Brentwood",address_line_one: "8600 Strassner Dr",address_line_two: "Brentwood",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 557857528,latitude: 38.621725600291,longitude: -90.36688427904915)
+location9=Location.create!(name: "Hazelwood",address_line_one: "1186 Teson Rd",address_line_two: "Hazelwood",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 8796255,latitude: 38.792604024269586,longitude: -90.38527052976517)
+location10=Location.create!(name: "St.Peters",address_line_one: "1725 Thoele Rd",address_line_two: "St.Peters",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 898741525,latitude: 38.76611838286981,longitude: -90.51087057784007)
+location11=Location.create!(name: "Creve Cour",address_line_one: "1030 Woodcrest Terrace Dr",address_line_two: "Creve Cour",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 878945585,latitude: 38.675473733114316,longitude: -90.45294602510049)
 
 puts "location seeded"
 

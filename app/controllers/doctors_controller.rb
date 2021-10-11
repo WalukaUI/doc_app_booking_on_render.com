@@ -14,12 +14,12 @@ class DoctorsController < ApplicationController
         else
           doctor = Doctor.all
         end
-          render json: doctor
+          render json: doctor.to_json(except: [:created_at, :updated_at, :password_digest])
     end
   
     def show
           doctor = Doctor.find(params[:id])
-          render json: doctor.to_json(except: [:created_at, :updated_at], include: [appointments: { except: [:created_at, :updated_at]}], include: [comment: { except: [:created_at, :updated_at]}]), status: 200
+          render json: doctor.to_json(except: [:created_at, :updated_at,:password_digest], include: [appointments: { except: [:created_at, :updated_at]}], include: [comment: { except: [:created_at, :updated_at]}]), status: 200
     end
 
     def create
@@ -46,7 +46,7 @@ class DoctorsController < ApplicationController
     def location_index
         doctor = Location.find(params[:location_id])
         location=doctor.locations
-        render json: location
+        render json: location(except: [:created_at, :updated_at])
     end
 
     private

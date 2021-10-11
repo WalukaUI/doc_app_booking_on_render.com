@@ -10,14 +10,14 @@ class PatientsController < ApplicationController
       else
         patient=Patient.all
       end
-        render json: patient.to_json(except: [:created_at, :updated_at, :username])
+        render json: patient.to_json(except: [:created_at, :updated_at, :username,:password_digest])
     end
     
     def create
      patient = Patient.create(patient_params)
        if patient.valid?
          session[:user_id] = patient.id
-         render json: patient, status: :created
+         render json: patient.to_json(except: [:created_at, :updated_at, :password_digest]), status: :created
        else
          render json: { error: patient.errors.full_messages }, status: :unprocessable_entity
        end
@@ -26,7 +26,7 @@ class PatientsController < ApplicationController
     def update
       patient = Patient.find(params[:id])
       patient.update!(patient_params)
-      render json: patient.to_json(except: [:created_at, :updated_at, :username, :password_digest])
+      render json: patient.to_json(except: [:created_at, :updated_at, :password_digest])
     end
 
     def destroy
@@ -35,8 +35,7 @@ class PatientsController < ApplicationController
     end
 
     def show
-
-      patient = Patient.find_by(id: params[:id])
+      patient = Patient.find_by(id: session[:user_id])
       render json: patient.to_json(except: [:created_at, :updated_at, :username, :password_digest], include: [comment: {except: [:created_at, :updated_at]}]) 
     end
   

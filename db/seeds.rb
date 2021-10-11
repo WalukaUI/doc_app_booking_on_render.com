@@ -31,66 +31,17 @@ doctor7=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name
 doctor8=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiBiZSvVxfxQlM4C0Sabn8SZ8DcBzKQP2jA&usqp=CAU")
 doctor9=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGGB7iQ3XJ7fqFwzk0qxCi5bOAjFr26H79kQ&usqp=CAU")
 doctor10=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmGIQ6O_zlBG6U943wOeO0MJmhz9Nlqb_lCQ&usqp=CAU")
+doctor11=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi_2yrCOq9Q0joZK8TRFCmHcxDtoUPdXsu5AepayL4molUb7PhYnZG_8QOnBMBgJpeepU&usqp=CAU")
+doctor12=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvG63T_pvtSC6_Sr_x9W4QUOPtp0qw5leNRc2HMcIveNigbyb86Qr7MlFn_IX501fS8vk&usqp=CAU")
+doctor13=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKglgYH9p9SbbHOKqVeV7pGd8UwPRoeO6TeoKRnrQxZTncF2T-oDG9pBGWfo-UE1JLjKc&usqp=CAU")
+doctor14=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Xd7HCR-rhjkcz0QrZNUldM_mMA1s4jV2aWXl2P4nUKKPgerbrFwWxsWvu9vV__L-bCU&usqp=CAU")
+doctor15=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4-uDIbzBqGHwaWmQjnyiuOR1C_ZHBVzZxAYKlM_G6bXBxnuHpt1WkkzVOzMIPKnoHVHI&usqp=CAU")
+
 
 puts "doctor seeded"
 
 # Location  table data
 
-cities = [
-  {
-    name: "New York",
-    lat: 40.7128,
-    lng: -74.0060
-  },
-  {
-    name: "Chicago",
-    lat: 41.8781, 
-    lng: -87.6298
-  },
-  {
-    name: "Seattle",
-    lat: 47.6062, 
-    lng: -122.3321
-  },
-  {
-    name: "Washington D.C.",
-    lat: 38.9072,
-    lng: -77.0369
-  },
-  {
-    name: "Denver",
-    lat: 39.7392, 
-    lng: -104.9903
-  },
-  {
-    name: "Houston",
-    lat: 29.7604, 
-    lng: -95.3698
-  }
-]
-
-# generate a random latitude/longitude
-
-def random_lat_lng(start_x, start_y)
-    r = 1 / 111.32
-    u = rand
-    v = rand
-  
-    w = r * Math.sqrt(u)
-    t = 2 * Math::PI * v
-    x = w * Math.cos(t) 
-    y = w * Math.sin(t)
-  
-    x = x / Math.cos(start_y)
-  
-    [x + start_x, y + start_y]
-  end
-
-  repeat     = 10
-  @addressLineOne=1.upto(repeat).map { |count| Faker::Address.community }
-
-  city = cities.sample
-  lat_lng = random_lat_lng(city[:lat], city[:lng])
 
 location1=Location.create!(name: "Normandy",address_line_one: "7738 Springdale Dr",address_line_two: "Normandy",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 354544742,latitude: 38.713894216893614, longitude: -90.30208583616161)
 location2=Location.create!(name: "OFallon",address_line_one: "2254 State Hwy K",address_line_two: "O'Fallon",city: "St. Louis",zipcode: Faker::Address.zip_code,contact_number: 5378568456,latitude: 38.67118615958442,longitude: -90.21846271745149)
@@ -140,7 +91,7 @@ puts "ptients seeded"
 
 # Comments Table data
 
-10.times do 
+40.times do 
   Comment.create!(
     doctor: doctor.sample,
     patient: patient.sample,
@@ -153,7 +104,7 @@ puts "ptients seeded"
 
 # Appointments Table data
 
-10.times do 
+20.times do 
    
   Appointment.create!(
    doctor: doctor.sample,

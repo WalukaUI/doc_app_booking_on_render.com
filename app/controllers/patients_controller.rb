@@ -36,7 +36,7 @@ class PatientsController < ApplicationController
 
     def show
       patient = Patient.find_by(id: session[:user_id])
-      render json: patient.to_json(except: [:created_at, :updated_at, :username, :password_digest], include: [comment: {except: [:created_at, :updated_at]}]) 
+      render json: patient.to_json(except: [:created_at, :updated_at, :password_digest], include: [comment: {except: [:created_at, :updated_at]}]) 
     end
   
     private

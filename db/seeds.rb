@@ -72,12 +72,20 @@ patient7=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Na
 patient8=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: locate.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
 patient9=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: locate.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
 patient10=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: locate.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient11=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: locate.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient12=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: locate.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient13=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: locate.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient14=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: locate.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+patient15=Patient.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,contact_number: Faker::PhoneNumber.cell_phone,clinic_location: locate.sample,role: "patient",username: Faker::Internet.username,password_digest: Faker::Address.country)
+
+
+
 
 puts "ptients seeded"
 
  # DoctorLocation Table data
  
- patient=[patient1,patient4,patient2,patient3,patient5,patient6,patient7,patient8,patient9,patient10]
+ patient=[patient1,patient4,patient2,patient3,patient5,patient6,patient7,patient8,patient9,patient10,patient11,patient12,patient13,patient14,patient15]
  doctor=[doctor1,doctor2,doctor3,doctor4,doctor5,doctor6,doctor7,doctor8,doctor9,doctor10,doctor11,doctor12,doctor13,doctor14,doctor15]
  location=[location1,location2,location3,location4,location5,location6,location7,location8,location9,location10,location11]
 
@@ -104,13 +112,15 @@ puts "ptients seeded"
 
 # Appointments Table data
 
+apptimes=[1000,1030,1100,1130,1200,1300,1330]
+
 20.times do 
    
   Appointment.create!(
    doctor: doctor.sample,
    patient: patient.sample,
    date: Faker::Date.backward(days: 14),
-   time: Faker::Time.between(from: DateTime.now - 10, to: DateTime.now, format: :short),
+   time: apptimes.sample,
    status: "open"
   )
  end

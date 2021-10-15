@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post "/signuppatient", to: "patients#create"
   post "/signupdoctor", to: "doctors#create"
   get "/me", to: "patients#show"
+  get "/doc", to: "doctors#sessionshow"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 

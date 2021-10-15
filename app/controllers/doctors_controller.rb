@@ -16,6 +16,10 @@ class DoctorsController < ApplicationController
         end
           render json: doctor.to_json(except: [:created_at, :updated_at, :password_digest])
     end
+    def sessionshow
+      doctor = Doctor.find_by(id: session[:user_id])
+      render json: doctor.to_json(except: [:created_at, :updated_at,:password_digest], include: [appointments: { except: [:created_at, :updated_at]}], include: [comment: { except: [:created_at, :updated_at]}]), status: 200
+    end
   
     def show
           doctor = Doctor.find(params[:id])

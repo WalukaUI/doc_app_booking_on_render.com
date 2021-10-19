@@ -10,7 +10,14 @@ Creating tables
 * Comments
 * Locations
 
-Use Sessions, Authentication
+...Used...
+
+Cookies and Sessions
+Authentication
+Serializing
+Active record Validation
+Error handling
+Nested Resource Routing
 
 
   ⬇ POSTGRESQL TABLE RELATIONSHIP ⬇

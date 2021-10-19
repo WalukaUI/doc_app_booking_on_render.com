@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
-    skip_before_action :authorize, only: [:show, :index, :create]
-    # before_action :authorize, only: [:show, :index]
+    skip_before_action :authorize, only: [:show, :index, :create, :sessionshow]
+    # before_action :authorize, only: [:show, :index, :create, :sessionshow]
     
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
@@ -22,7 +22,8 @@ class DoctorsController < ApplicationController
     end
   
     def show
-          doctor = Doctor.find(params[:id])
+          # doctor = Doctor.find(params[:id])
+          doctor = Doctor.find_by(id: params[:id])
           render json: doctor.to_json(except: [:created_at, :updated_at,:password_digest], include: [appointments: { except: [:created_at, :updated_at]}], include: [comment: { except: [:created_at, :updated_at]}]), status: 200
     end
 

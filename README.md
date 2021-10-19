@@ -1,24 +1,18 @@
-# README
+Backend for Doctor appointment Bookig app...
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+😎****MVC****😎
 
-Things you may want to cover:
+Creating tables
 
-* Ruby version
+* Doctors
+* Patients
+* Appointments
+* Comments
+* Locations
 
-* System dependencies
+Use Sessions, Authentication
 
-* Configuration
 
-* Database creation
+  ⬇ POSTGRESQL TABLE RELATIONSHIP ⬇
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Alt text](./appointment.jpg?raw=true "Title")

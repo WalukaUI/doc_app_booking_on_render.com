@@ -12,12 +12,12 @@ Creating tables
 
 ...Used...
 
-Cookies and Sessions
-Authentication
-Serializing
-Active record Validation
-Error handling
-Nested Resource Routing
+* Cookies and Sessions
+* Authentication
+* Serializing
+* Active record Validation
+* Error handling
+* Nested Resource Routing
 
 
   ⬇ POSTGRESQL TABLE RELATIONSHIP ⬇

@@ -4,5 +4,5 @@ class Appointment < ApplicationRecord
 
   validates :date, presence: true
   validates :doctor_id, presence: true
-  #validates :time, presence: true
+  validates :time, presence: true
 end

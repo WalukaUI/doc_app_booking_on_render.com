@@ -20,6 +20,7 @@ Comment.destroy_all
 spe=["Anesthesiology", "Family medicine", "Dermatology", "Pediatrics", "Preventive medicine" ]
 edu=["MBBS,MD", "BSc,MD,Phd", "MDC,MBBS"]
 vdo_vst=[true,false]
+puts "Seeding doctors..."
 
 doctor1=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzRaxM5y3PoVZoZw1_62dqVdwsZXypn2ySuw&usqp=CAU",doctor: true)
 doctor2=Doctor.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,email: Faker::Internet.email,education: edu.sample,speciality: spe.sample,role: "doctor", password: "123456",isaccept_newpatients:vdo_vst.sample,video_vistits:vdo_vst.sample,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtJz2qzlsOmmPPA0cN7isuZrJGDa4Nv7dVsQ&usqp=CAU",doctor: true)

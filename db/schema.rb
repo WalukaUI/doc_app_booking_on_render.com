@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_041243) do
     t.string "image"
     t.boolean "isaccept_newpatients"
     t.boolean "video_vistits"
+    t.boolean "doctor"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_041243) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.string "password_digest"
+    t.boolean "patient"
   end
 
   add_foreign_key "appointments", "doctors"

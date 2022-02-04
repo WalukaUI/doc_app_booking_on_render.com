@@ -4,12 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to Doctors App, <%= @patientOftheBooking.first_name%></h1>
-    <p>
-      You have successfully Booked an Appointment,
-      your username is: <%= @patientOftheBooking.first_name %>.<br>
-    </p>
+    <h3><%= @patientOftheBooking.first_name%>, You have successfully Booked an Appointment</h3>
+    <p>Apointment Date: <%= @newBooking.date  %> Hrs</p>
     <p>Apointment Time: <%= @newBooking.time  %> Hrs</p>
+    <p>Doctor's name: <%= @doc.first_name  %> <%= @doc.last_name  %> Hrs</p>
     <p>
       To login to the site, just follow this link: <a><%= @url %></a>.
     </p>

@@ -4,14 +4,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @patient%></h1>
+    <h1>Welcome to Doctors App, <%= @patientOftheBooking.first_name%></h1>
     <p>
-      You have successfully signed up to example.com,
-      your username is: <%= @patient %>.<br>
+      You have successfully Booked an Appointment,
+      your username is: <%= @patientOftheBooking.first_name %>.<br>
     </p>
+    <p>Apointment Time: <%= @newBooking.time  %> Hrs</p>
     <p>
-      To login to the site, just follow this link: <%= @url %>.
+      To login to the site, just follow this link: <a><%= @url %></a>.
     </p>
-    <p>Thanks for joining and have a great day!</p>
+    <p>Thanks for new Booking and have a great day!</p>
   </body>
 </html>

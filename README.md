@@ -1,24 +1,24 @@
 Backend for Doctor appointment Bookig app...
 
-😎****MVC****😎
+😎\***\*Features\*\***😎
 
-Creating tables
+Tables in the app
 
-* Doctors
-* Patients
-* Appointments
-* Comments
-* Locations
+- Doctors
+- Patients
+- Appointments
+- Comments
+- Locations
 
-...Used...
+...Used below technologies...
 
-* Cookies and Sessions
-* Authentication
-* Serializing
-* Active record Validation
-* Error handling
-* Nested Resource Routing
-
+- Cookies and Sessions
+- Action Mailer
+- Authentication
+- Serializing
+- Active record Validation
+- Error handling
+- Nested Resource Routing
 
   ⬇ POSTGRESQL TABLE RELATIONSHIP ⬇
 

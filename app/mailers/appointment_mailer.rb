@@ -1,13 +1,7 @@
 class AppointmentMailer < ApplicationMailer
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.appointment_mailer.new_appointment.subject
-  #
-  def new_appointment
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def new_appointment()
+    @patient = "waluka"
+    @url  = 'https://doctor-appointment-creator.netlify.app/'
+    mail(to: "cwaluka@yahoo.com", subject: 'New Appointment Created')
   end
 end

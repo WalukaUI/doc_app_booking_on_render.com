@@ -1,5 +1,17 @@
-<h1>Appointment#new_appointment</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/appointment_mailer/new_appointment.html.erb
-</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, <%= @patient%></h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: <%= @patient %>.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

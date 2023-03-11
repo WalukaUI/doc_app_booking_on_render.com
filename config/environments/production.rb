@@ -123,6 +123,6 @@ Rails.application.configure do
     open_timeout:         5,
     read_timeout:         5 }
 
-    config.action_mailer.default_url_options = { :host => "guarded-hamlet-25175.herokuapp.com" }
+    config.action_mailer.default_url_options = { :host => "doc-appointment-booking-app.onrender.com" }
 
 end

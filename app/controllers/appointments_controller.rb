@@ -6,8 +6,8 @@ class AppointmentsController < ApplicationController
         if params[:doctor_id]
           doctor = Doctor.find(params[:doctor_id])
           appointment = doctor.appointments
-          @ww=appointment.to_json(include: [:patient])
-          render json: @ww
+          appointments_with_patient_data=appointment.to_json(include: [:patient], except: [:created_at, :updated_at])
+          render json: appointments_with_patient_data
         elsif params[:patient_id]
           patient = Patient.find(params[:patient_id])
           appointment = patient.appointments
@@ -31,7 +31,7 @@ class AppointmentsController < ApplicationController
       def update
         appointment = Appointment.find(params[:id])
         appointment.update!(appointment_params)
-        render json: appointment.to_json(except: [:created_at, :updated_at])
+        render json: appointment.to_json(include: [:patient], except: [:created_at, :updated_at])
       end
 
       def destroy

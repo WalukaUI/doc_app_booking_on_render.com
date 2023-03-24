@@ -6,13 +6,15 @@ class AppointmentsController < ApplicationController
         if params[:doctor_id]
           doctor = Doctor.find(params[:doctor_id])
           appointment = doctor.appointments
+          @ww=appointment.to_json(include: [:patient])
+          render json: @ww
         elsif params[:patient_id]
           patient = Patient.find(params[:patient_id])
           appointment = patient.appointments
+          render json: appointment.to_json(except: [:created_at, :updated_at])
         else
           appointment = Appointment.all
         end
-          render json: appointment.to_json(except: [:created_at, :updated_at])
       end
 
       def show

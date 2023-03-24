@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'walukaui@gmail.com'
+  default from: 'info@mailtrap.club'
   layout 'mailer'
 end
